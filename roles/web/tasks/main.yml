@@ -1,0 +1,22 @@
+---
+- name: 'instalando os pacotes'
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  become: yes
+  with_items:
+    - php
+    - apache2
+    - libapache2-mod-php
+    - php-gd
+    - php-mysql
+
+- name: "mudando conf do apache"
+  replace:
+    path: /etc/apache2/sites-available/000-default.conf
+    regexp: "/var/www/html"
+    replace: "/var/www/wordpress"
+  become: yes
+  notify: 
+    - restart apache

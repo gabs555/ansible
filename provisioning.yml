@@ -1,0 +1,9 @@
+---
+- hosts: dbteste
+  roles:
+    - mysql
+
+- hosts: teste
+  roles:
+    - web
+    - wordpress

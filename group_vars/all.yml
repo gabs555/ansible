@@ -1,0 +1,7 @@
+---
+wp_db_username: vagrant
+wp_db_user_pass: passdb
+wp_db_name: wordpress_db
+wp_web_ip: 192.168.100.100
+wp_db_ip: 192.168.100.110
+wp_dir_path: /var/www/wordpress
